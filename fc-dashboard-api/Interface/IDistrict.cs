@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace fc_dashboard_api.Interface
 {
-    public interface IState_master
+    public interface IDistrict
     {
         Task<List<State_Master>> getState();
         Task<List<District_Master>> GetDistrict();

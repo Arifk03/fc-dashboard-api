@@ -33,7 +33,7 @@ namespace fc_dashboard_api
             services.AddDbContext<FC_db_Context>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("FieldConnect")));
             services.AddControllers();
-            services.AddScoped<IState_master, State>();
+            services.AddScoped<IDistrict, District>();
 
             services.AddSwaggerGen(c =>
             {

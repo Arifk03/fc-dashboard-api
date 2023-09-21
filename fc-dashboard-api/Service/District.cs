@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace fc_dashboard_api.Service
 {
-    public class State : IState_master
+    public class District : IDistrict
     {
         private readonly FC_db_Context _db_Context;
-        public State(FC_db_Context fc_db_Context)
+        public District(FC_db_Context fc_db_Context)
         {
             _db_Context = fc_db_Context;
         }

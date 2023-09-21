@@ -14,26 +14,19 @@ namespace fc_dashboard_api.Controllers
     [ApiController]
     public class UsersController : ControllerBase
     {
-        private readonly IState_master _state;
-        public UsersController(IState_master state_Master)
+        private readonly IDistrict _district;
+        public UsersController(IDistrict district)
         {
-            _state = state_Master;
+            _district = district;
         }
 
-        [HttpGet]
-        [Route("StateMaster")]
-        public async Task<IActionResult> GetState()
-        {
-            var result = await _state.getState();
-            return Ok(result);
-        }
 
         [HttpGet]
         [Route("District")]
         public async Task<ServiceResult<List<District_Master>>> GetDistrict()
         {
             var result = new ServiceResult<List<District_Master>>();
-            var dist = await _state.GetDistrict();
+            var dist = await _district.GetDistrict();
             result.SetSuccess(dist);
             return result;
         }
